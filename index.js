@@ -1,9 +1,15 @@
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
+import roleRoute from './routes/role.js';
 
 const app = express();
 dotenv.config();
+
+
+app.use(express.json());
+app.use('/api/role', roleRoute)
+
 
 // DB Connection
 const connectMongoDB = async ()=>{
@@ -17,5 +23,5 @@ const connectMongoDB = async ()=>{
 
 app.listen(8000,()=>{
     connectMongoDB();
-    console.log('Server is running');
+    console.log('Server is running at http://localhost:8000');
 });
