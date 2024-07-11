@@ -8,7 +8,7 @@ const RoleSchema = mongoose.Schema(
         }
     },
     {
-        timestapms:true
+        timestamps:true
     }
 );
 
